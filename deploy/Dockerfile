@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
  && mkdir build
 WORKDIR build
 
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4.tar.gz \
+RUN wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz \
     && tar -zxvf cmake-3.18.4.tar.gz \
     && cd cmake-3.18.4 && ./bootstrap
 
