@@ -34,6 +34,7 @@ if [ ! -d "$DRIVERS_DIR"/"$MONGO_C_DRIVER_DIR" ] || [ ! -d "$DRIVERS_DIR"/"$MONG
   cd mongo-cxx-driver-"$MONGO_CXX_VERSION"/build &&
     cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$DRIVERS_DIR"/"$MONGO_CXX_DRIVER_DIR" \
       -DCMAKE_PREFIX_PATH="$DRIVERS_DIR"/"$MONGO_C_DRIVER_DIR"  -DENABLE_TESTS:BOOL=OFF \
+      -DBUILD_SHARED_LIBS_WITH_STATIC_MONGOC=ON                \
         -DENABLE_EXAMPLES:BOOL=OFF &&
     cmake --build . &&
     cmake --build . --target install
