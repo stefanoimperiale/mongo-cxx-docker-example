@@ -2,7 +2,7 @@
 language: cpp
 dist: bionic
 os:
-  - windows
+  - osx
   - linux
 
 compiler:

@@ -1,11 +1,16 @@
 version: "3.3"
 services:
-
   mongo:
-    image:
+    image: mongo
+    command: --port 27016
 
   driver-test:
     build:
       dockerfile: ./Dockerfile
+      context: .
+      args:
+        CONNECTION_URL: mongodb://localhost:27016
+    depends_on:
+      - mongo
 
 
